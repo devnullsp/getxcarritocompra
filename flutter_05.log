@@ -1,0 +1,95 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter doctor
+
+## exception
+
+_CastError: Null check operator used on a null value
+
+```
+#0      MaterialFonts.updateInner (package:flutter_tools/src/flutter_cache.dart:141:49)
+#1      CachedArtifact.update (package:flutter_tools/src/cache.dart:688:11)
+#2      Cache.updateAll (package:flutter_tools/src/cache.dart:557:24)
+<asynchronous suspension>
+#3      FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:1227:7)
+<asynchronous suspension>
+#4      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1125:27)
+<asynchronous suspension>
+#5      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#6      CommandRunner.runCommand (package:args/command_runner.dart:209:13)
+<asynchronous suspension>
+#7      FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:288:9)
+<asynchronous suspension>
+#8      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#9      FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:236:5)
+<asynchronous suspension>
+#10     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:62:9)
+<asynchronous suspension>
+#11     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#12     main (package:flutter_tools/executable.dart:92:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[☠] Flutter (the doctor check crashed)
+    ✗ Due to an error, the doctor check did not complete. If the error message below is not helpful, please let us know
+      about this issue at https://github.com/flutter/flutter/issues.
+    ✗ Exception: Could not determine engine revision.
+    • #0      throwToolExit (package:flutter_tools/src/base/common.dart:10:3)
+      #1      Cache.engineRevision (package:flutter_tools/src/cache.dart:379:7)
+      #2      FlutterVersion.engineRevision (package:flutter_tools/src/version.dart:149:46)
+      #3      FlutterVersion.engineRevisionShort (package:flutter_tools/src/version.dart:150:55)
+      #4      FlutterValidator.validate (package:flutter_tools/src/doctor.dart:449:75)
+      #5      asyncGuard.<anonymous closure> (package:flutter_tools/src/base/async_guard.dart:111:32)
+      #6      asyncGuard.<anonymous closure> (package:flutter_tools/src/base/async_guard.dart:109:18)
+      #7      _rootRun (dart:async/zone.dart:1428:13)
+      #8      _CustomZone.run (dart:async/zone.dart:1328:19)
+      #9      _runZoned (dart:async/zone.dart:1863:10)
+      #10     runZonedGuarded (dart:async/zone.dart:1851:12)
+      #11     runZoned (dart:async/zone.dart:1782:12)
+      #12     asyncGuard (package:flutter_tools/src/base/async_guard.dart:109:3)
+      #13     Doctor.startValidatorTasks (package:flutter_tools/src/doctor.dart:200:9)
+      #14     Doctor.diagnose (package:flutter_tools/src/doctor.dart:304:47)
+      #15     _doctorText (package:flutter_tools/runner.dart:232:18)
+      #16     _handleToolError (package:flutter_tools/runner.dart:157:27)
+      <asynchronous suspension>
+      #17     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+      <asynchronous suspension>
+      #18     main (package:flutter_tools/executable.dart:92:3)
+      <asynchronous suspension>
+
+
+[✗] Android toolchain - develop for Android devices
+    ✗ Unable to locate Android SDK.
+      Install Android Studio from: https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK components.
+      (or visit https://flutter.dev/docs/get-started/install/windows#android-setup for detailed instructions).
+      If the Android SDK has been installed to a custom location, please use
+      `flutter config --android-sdk` to update to that location.
+
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[!] Android Studio (not installed)
+    • Android Studio not found; download from https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/docs/get-started/install/windows#android-setup for detailed instructions).
+
+[✓] VS Code, 64-bit edition (version 1.62.0)
+    • VS Code at C:\Program Files\Microsoft VS Code
+    • Flutter extension version 3.28.0
+
+[✓] Connected device (2 available)
+    • Chrome (web) • chrome • web-javascript • Google Chrome 95.0.4638.69
+    • Edge (web)   • edge   • web-javascript • Microsoft Edge 95.0.1020.40
+
+! Doctor found issues in 3 categories.
+```
